@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>General Support | Technical Assistance</title>
+    <title>Billing Support</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <style>
-        .support-wrapper {
-            max-width: 1100px;
+        .billing-wrapper {
+            max-width: 1000px;
             margin: auto;
             padding: 20px;
         }
 
-        .phone-card {
-            background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+        .billing-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
             border-radius: 28px;
-            padding: 50px 60px;
+            padding: 50px 55px;
             box-shadow: 0 22px 50px rgba(37, 99, 235, 0.2);
-            animation: fadeUp 0.8s ease-out;
+            animation: fadeInUp 0.8s ease-out;
             position: relative;
             overflow: hidden;
             border: 2px solid rgba(37, 99, 235, 0.25);
         }
 
-        .phone-card::before {
+        .billing-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -34,7 +34,7 @@
             background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
         }
 
-        .phone-card::after {
+        .billing-card::after {
             content: '';
             position: absolute;
             top: -30%;
@@ -45,7 +45,7 @@
             z-index: 0;
         }
 
-        .support-header {
+        .billing-header {
             display: flex;
             align-items: center;
             gap: 20px;
@@ -54,7 +54,7 @@
             z-index: 1;
         }
 
-        .support-icon {
+        .billing-icon {
             background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: white;
             width: 90px;
@@ -68,11 +68,11 @@
             animation: bounce 2s infinite;
         }
 
-        .support-title {
+        .billing-title {
             flex: 1;
         }
 
-        .support-title h1 {
+        .billing-title h1 {
             font-size: 2.8rem;
             font-weight: 900;
             color: #1e3a8a;
@@ -80,7 +80,7 @@
             letter-spacing: -0.5px;
         }
 
-        .support-title p {
+        .billing-title p {
             color: #1e40af;
             font-size: 1.2rem;
             margin: 8px 0 0;
@@ -88,11 +88,11 @@
         }
 
         .availability-banner {
-            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
             padding: 25px 30px;
             border-radius: 18px;
             margin: 35px 0;
-            border: 2px solid #93c5fd;
+            border: 2px solid #7dd3fc;
             position: relative;
             z-index: 1;
             display: flex;
@@ -103,7 +103,7 @@
 
         .availability-icon {
             font-size: 2.5rem;
-            color: #2563eb;
+            color: #0284c7;
             animation: pulse 2s infinite;
         }
 
@@ -114,12 +114,12 @@
         .availability-text h4 {
             font-size: 1.5rem;
             font-weight: 800;
-            color: #1e3a8a;
+            color: #0369a1;
             margin-bottom: 8px;
         }
 
         .availability-text p {
-            color: #1e40af;
+            color: #0c4a6e;
             font-size: 16px;
             line-height: 1.6;
             margin: 0;
@@ -131,7 +131,7 @@
             padding: 40px;
             text-align: center;
             margin: 40px 0;
-            border: 2px solid #bfdbfe;
+            border: 2px solid #bae6fd;
             position: relative;
             z-index: 1;
             box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
@@ -140,7 +140,7 @@
         .phone-label {
             font-size: 1.3rem;
             font-weight: 700;
-            color: #1e3a8a;
+            color: #0369a1;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -148,7 +148,7 @@
             gap: 10px;
         }
 
-        .phone-number {
+        .billing-number {
             font-size: 3.5rem;
             font-weight: 900;
             color: #2563eb;
@@ -173,7 +173,7 @@
             z-index: 1;
         }
 
-        .call-btn {
+        .billing-call-btn {
             display: inline-flex;
             align-items: center;
             gap: 15px;
@@ -190,13 +190,13 @@
             justify-content: center;
         }
 
-        .call-btn:hover {
+        .billing-call-btn:hover {
             transform: translateY(-8px) scale(1.05);
             box-shadow: 0 25px 50px rgba(37, 99, 235, 0.6);
             color: white;
         }
 
-        .call-btn i {
+        .billing-call-btn i {
             animation: ring 1.5s infinite;
         }
 
@@ -227,7 +227,7 @@
             border-color: #10b981;
         }
 
-        .support-areas {
+        .billing-areas {
             position: relative;
             z-index: 1;
             margin: 50px 0;
@@ -295,34 +295,129 @@
             margin: 0;
         }
 
-        .response-stats {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 25px;
+        .business-hours {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 20px;
+            padding: 35px 40px;
             margin: 50px 0;
+            position: relative;
+            z-index: 1;
+            border: 2px solid #7dd3fc;
+        }
+
+        .hours-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0369a1;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hours-title i {
+            color: #0284c7;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .hours-item {
+            background: white;
+            border-radius: 14px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #bae6fd;
+            transition: all 0.3s ease;
+        }
+
+        .hours-item:hover {
+            transform: translateY(-5px);
+            border-color: #0284c7;
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.1);
+        }
+
+        .hours-day {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0369a1;
+            margin-bottom: 10px;
+        }
+
+        .hours-time {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .hours-note {
+            font-size: 14px;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .preparation-tips {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 2px solid #dbeafe;
             position: relative;
             z-index: 1;
         }
 
-        .stat-item {
-            text-align: center;
-            padding: 25px;
-            min-width: 180px;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #2563eb;
-            margin-bottom: 8px;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
+        .tips-title {
+            font-size: 1.6rem;
+            font-weight: 700;
             color: #1e3a8a;
-            font-weight: 600;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tips-title i {
+            color: #2563eb;
+        }
+
+        .tips-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tips-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .tips-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tip-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(37, 99, 235, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2563eb;
+            flex-shrink: 0;
+        }
+
+        .tip-text {
+            color: #4b5563;
+            font-size: 15.5px;
+            line-height: 1.6;
         }
 
         .alternative-support {
@@ -400,66 +495,6 @@
             margin: 0;
         }
 
-        .preparation-tips {
-            background: white;
-            border-radius: 18px;
-            padding: 30px;
-            margin: 40px 0;
-            border: 2px solid #dbeafe;
-            position: relative;
-            z-index: 1;
-        }
-
-        .tips-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #1e3a8a;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .tips-title i {
-            color: #2563eb;
-        }
-
-        .tips-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .tips-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 15px 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .tips-list li:last-child {
-            border-bottom: none;
-        }
-
-        .tip-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: rgba(37, 99, 235, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2563eb;
-            flex-shrink: 0;
-        }
-
-        .tip-text {
-            color: #4b5563;
-            font-size: 15.5px;
-            line-height: 1.6;
-        }
-
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -481,7 +516,7 @@
             color: #1f2937;
         }
 
-        @keyframes fadeUp {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -529,23 +564,23 @@
         }
 
         @media (max-width: 768px) {
-            .phone-card {
+            .billing-card {
                 padding: 35px 25px;
             }
             
-            .support-header {
+            .billing-header {
                 flex-direction: column;
                 text-align: center;
                 gap: 15px;
             }
             
-            .support-icon {
+            .billing-icon {
                 width: 70px;
                 height: 70px;
                 font-size: 2rem;
             }
             
-            .support-title h1 {
+            .billing-title h1 {
                 font-size: 2.2rem;
             }
             
@@ -555,7 +590,7 @@
                 gap: 15px;
             }
             
-            .phone-number {
+            .billing-number {
                 font-size: 2.5rem;
                 letter-spacing: 1px;
             }
@@ -565,45 +600,47 @@
                 align-items: stretch;
             }
             
-            .call-btn, .copy-btn {
+            .billing-call-btn, .copy-btn {
                 width: 100%;
                 justify-content: center;
                 min-width: auto;
             }
             
-            .areas-grid, .alternative-grid {
+            .areas-grid, .hours-grid, .alternative-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .response-stats {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .stat-item {
-                min-width: 100%;
-            }
         }
 
-        .whatsapp-btn {
+        .response-time {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 14px;
+            gap: 8px;
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
+            margin-left: 15px;
+            font-size: 14px;
         }
 
-        .whatsapp-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
-            color: white;
+        .holiday-notice {
+            background: #fef3c7;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 30px;
+            border: 2px solid #fbbf24;
+            position: relative;
+            z-index: 1;
+        }
+
+        .holiday-notice p {
+            margin: 0;
+            color: #92400e;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
     </style>
 </head>
@@ -611,15 +648,15 @@
     @extends('dashboard.adminrole')
     @section('content')
     <div class="container py-5">
-        <div class="support-wrapper">
-            <div class="phone-card">
-                <div class="support-header">
-                    <div class="support-icon">
-                        <i class="fas fa-headset"></i>
+        <div class="billing-wrapper">
+            <div class="billing-card">
+                <div class="billing-header">
+                    <div class="billing-icon">
+                        <i class="fas fa-credit-card"></i>
                     </div>
-                    <div class="support-title">
-                        <h1>General Support</h1>
-                        <p>Technical Assistance • Account Support • Platform Guidance</p>
+                    <div class="billing-title">
+                        <h1>Billing Support</h1>
+                        <p>Payment Assistance • Invoice Management • Account Billing</p>
                     </div>
                 </div>
 
@@ -628,50 +665,71 @@
                         <i class="fas fa-clock"></i>
                     </div>
                     <div class="availability-text">
-                        <h4>📞 24/7 Phone Support Available</h4>
-                        <p>Our trained support agents are available around the clock to assist with technical issues, account-related help, and general platform assistance.</p>
+                        <h4>📞 Dedicated Billing Support</h4>
+                        <p>Our specialized billing team is available Monday through Friday, 8:00 AM to 8:00 PM EST to handle all payment and account billing matters.</p>
                     </div>
                 </div>
 
                 <div class="phone-number-display">
                     <div class="phone-label">
                         <i class="fas fa-phone-alt"></i>
-                        Primary Support Number
+                        Primary Billing Number
                     </div>
-                    <div class="phone-number" id="phoneNumber">+1 (800) 787-7678</div>
+                    <div class="billing-number" id="billingNumber">+1 (800) 245-3663</div>
                     <div class="phone-format">
-                        International: +1 (555) 123-4567 • Toll-Free within US & Canada
+                        International: +1 (555) 789-0123 • Toll-Free within US & Canada
                     </div>
                     <div class="call-actions">
-                        <a href="tel:+18007877678" class="call-btn" onclick="trackCall('general')">
-                            <i class="fas fa-phone-alt"></i> CALL GENERAL SUPPORT
+                        <a href="tel:+18002453663" class="billing-call-btn" onclick="trackCall('billing')">
+                            <i class="fas fa-phone-alt"></i> CALL BILLING SUPPORT
                         </a>
-                        <button class="copy-btn" onclick="copyPhoneNumber()">
+                        <button class="copy-btn" onclick="copyBillingNumber()">
                             <i class="fas fa-copy"></i> Copy Number
                         </button>
                     </div>
                 </div>
 
-                <div class="response-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">< 2 min</div>
-                        <div class="stat-label">Avg. Wait Time</div>
+                <div class="business-hours">
+                    <h3 class="hours-title">
+                        <i class="fas fa-calendar-alt"></i>
+                        Business Hours & Availability
+                    </h3>
+                    <div class="hours-grid">
+                        <div class="hours-item">
+                            <div class="hours-day">Monday - Friday</div>
+                            <div class="hours-time">8:00 AM - 8:00 PM</div>
+                            <p class="hours-note">Eastern Standard Time</p>
+                        </div>
+                        
+                        <div class="hours-item">
+                            <div class="hours-day">Saturday</div>
+                            <div class="hours-time">9:00 AM - 5:00 PM</div>
+                            <p class="hours-note">Limited Support</p>
+                        </div>
+                        
+                        <div class="hours-item">
+                            <div class="hours-day">Sunday</div>
+                            <div class="hours-time">Closed</div>
+                            <p class="hours-note">Emergency Only</p>
+                        </div>
+                        
+                        <div class="hours-item">
+                            <div class="hours-day">Holidays</div>
+                            <div class="hours-time">Closed</div>
+                            <p class="hours-note">See holiday schedule</p>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Availability</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Satisfaction Rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Expert Agents</div>
+                    
+                    <div class="holiday-notice">
+                        <p>
+                            <i class="fas fa-calendar-star"></i>
+                            <strong>Holiday Notice:</strong> Our billing department will be closed on major US holidays. 
+                            Emergency billing issues can be reported via email during these periods.
+                        </p>
                     </div>
                 </div>
 
-                <div class="support-areas">
+                <div class="billing-areas">
                     <h3 class="areas-title">
                         <i class="fas fa-list-check"></i>
                         Areas We Can Help With
@@ -679,34 +737,34 @@
                     <div class="areas-grid">
                         <div class="area-card">
                             <div class="area-icon">
-                                <i class="fas fa-sign-in-alt"></i>
-                            </div>
-                            <h4 class="area-title">Login & Authentication</h4>
-                            <p class="area-desc">Password resets, two-factor authentication issues, account lockouts, and login problems.</p>
-                        </div>
-                        
-                        <div class="area-card">
-                            <div class="area-icon">
-                                <i class="fas fa-cog"></i>
-                            </div>
-                            <h4 class="area-title">Technical Issues</h4>
-                            <p class="area-desc">System errors, performance problems, feature malfunctions, and integration issues.</p>
-                        </div>
-                        
-                        <div class="area-card">
-                            <div class="area-icon">
-                                <i class="fas fa-user-circle"></i>
-                            </div>
-                            <h4 class="area-title">Account Management</h4>
-                            <p class="area-desc">Profile updates, permission changes, user management, and account settings.</p>
-                        </div>
-                        
-                        <div class="area-card">
-                            <div class="area-icon">
                                 <i class="fas fa-file-invoice-dollar"></i>
                             </div>
-                            <h4 class="area-title">Billing Support</h4>
-                            <p class="area-desc">Invoice questions, payment issues, subscription changes, and billing inquiries.</p>
+                            <h4 class="area-title">Invoice & Billing</h4>
+                            <p class="area-desc">Invoice requests, billing statements, payment history, and billing discrepancies.</p>
+                        </div>
+                        
+                        <div class="area-card">
+                            <div class="area-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h4 class="area-title">Payment Processing</h4>
+                            <p class="area-desc">Payment issues, declined transactions, refund requests, and payment methods.</p>
+                        </div>
+                        
+                        <div class="area-card">
+                            <div class="area-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="area-title">Subscription Management</h4>
+                            <p class="area-desc">Plan upgrades/downgrades, subscription changes, and renewal questions.</p>
+                        </div>
+                        
+                        <div class="area-card">
+                            <div class="area-icon">
+                                <i class="fas fa-user-tag"></i>
+                            </div>
+                            <h4 class="area-title">Account Credits & Discounts</h4>
+                            <p class="area-desc">Promotional credits, discount applications, and special pricing inquiries.</p>
                         </div>
                     </div>
                 </div>
@@ -719,34 +777,34 @@
                     <ul class="tips-list">
                         <li>
                             <div class="tip-icon">
-                                <i class="fas fa-user"></i>
+                                <i class="fas fa-receipt"></i>
                             </div>
                             <div class="tip-text">
-                                <strong>Have your account information ready</strong> - Account ID, username, or registered email address.
+                                <strong>Have your invoice number ready</strong> - This helps us quickly locate your account and payment details.
                             </div>
                         </li>
                         <li>
                             <div class="tip-icon">
-                                <i class="fas fa-desktop"></i>
+                                <i class="fas fa-credit-card"></i>
                             </div>
                             <div class="tip-text">
-                                <strong>Note your system details</strong> - Browser, operating system, and any error messages you're seeing.
+                                <strong>Payment method details</strong> - Last 4 digits of your card, payment date, and amount if applicable.
                             </div>
                         </li>
                         <li>
                             <div class="tip-icon">
-                                <i class="fas fa-sticky-note"></i>
+                                <i class="fas fa-user-circle"></i>
                             </div>
                             <div class="tip-text">
-                                <strong>Describe the issue clearly</strong> - When it started, steps to reproduce, and what you've already tried.
+                                <strong>Account verification information</strong> - Account ID, registered email, and billing address.
                             </div>
                         </li>
                         <li>
                             <div class="tip-icon">
-                                <i class="fas fa-history"></i>
+                                <i class="fas fa-envelope-open"></i>
                             </div>
                             <div class="tip-text">
-                                <strong>Recent changes</strong> - Any recent updates, configuration changes, or new software installations.
+                                <strong>Any relevant correspondence</strong> - Email confirmations, error messages, or reference numbers.
                             </div>
                         </li>
                     </ul>
@@ -758,43 +816,43 @@
                         Alternative Support Channels
                     </h3>
                     <div class="alternative-grid">
+                        <a href="mailto:billing@adminportal.com" class="alt-option">
+                            <div class="alt-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="alt-text">
+                                <h4>Email Billing Team</h4>
+                                <p>billing@adminportal.com • Response within 4 business hours</p>
+                            </div>
+                        </a>
+                        
                         <a href="{{ route('dashboard.live-chat') }}" class="alt-option">
                             <div class="alt-icon">
                                 <i class="fas fa-comment-dots"></i>
                             </div>
                             <div class="alt-text">
-                                <h4>Live Chat</h4>
-                                <p>Instant messaging with support agents. Avg. response < 2 min.</p>
+                                <h4>Live Chat Support</h4>
+                                <p>Available during business hours • Quick billing questions</p>
                             </div>
                         </a>
                         
-                        <a href="{{ route('dashboard.email-support') }}" class="alt-option">
+                        <a href="{{ route('dashboard.general-support') }}" class="alt-option">
                             <div class="alt-icon">
-                                <i class="fas fa-envelope"></i>
+                                <i class="fas fa-headset"></i>
                             </div>
                             <div class="alt-text">
-                                <h4>Email Support</h4>
-                                <p>Detailed assistance via email. Response within 2 hours.</p>
+                                <h4>General Support</h4>
+                                <p>For non-billing technical issues • Available 24/7</p>
                             </div>
                         </a>
                         
-                        <a href="{{ route('dashboard.emergency-support') }}" class="alt-option">
+                        <a href="#" class="alt-option" onclick="openClientPortal()">
                             <div class="alt-icon">
-                                <i class="fas fa-exclamation-triangle"></i>
+                                <i class="fas fa-user-lock"></i>
                             </div>
                             <div class="alt-text">
-                                <h4>Emergency Line</h4>
-                                <p>Critical system failures only. Immediate response.</p>
-                            </div>
-                        </a>
-                        
-                        <a href="#" class="alt-option" onclick="openWhatsApp()">
-                            <div class="alt-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="alt-text">
-                                <h4>WhatsApp Support</h4>
-                                <p>Text-based support via WhatsApp. Available 9 AM - 6 PM EST.</p>
+                                <h4>Client Billing Portal</h4>
+                                <p>Self-service portal for invoices, payments, and account management</p>
                             </div>
                         </a>
                     </div>
@@ -810,9 +868,9 @@
     </div>
 
     <script>
-        function copyPhoneNumber() {
-            const phoneNumber = document.getElementById('phoneNumber').textContent;
-            navigator.clipboard.writeText(phoneNumber.replace(/\s+/g, '')).then(() => {
+        function copyBillingNumber() {
+            const billingNumber = document.getElementById('billingNumber').textContent;
+            navigator.clipboard.writeText(billingNumber.replace(/\s+/g, '')).then(() => {
                 const button = event.target.closest('.copy-btn');
                 const originalText = button.innerHTML;
                 const originalClass = button.className;
@@ -825,26 +883,41 @@
                     button.className = originalClass;
                 }, 2000);
                 
-                showNotification('Phone number copied to clipboard!', 'success');
+                showNotification('Billing number copied to clipboard!', 'success');
             }).catch(err => {
                 console.error('Failed to copy: ', err);
-                showNotification('Failed to copy phone number', 'error');
+                showNotification('Failed to copy billing number', 'error');
             });
         }
 
         function trackCall(type) {
             
+            const now = new Date();
+            const hours = now.getHours();
+            const day = now.getDay(); 
+            
+            
+            const isBusinessHours = day >= 1 && day <= 5 && hours >= 8 && hours < 20;
+            
+            if (!isBusinessHours && type === 'billing') {
+                const confirmCall = confirm('You are calling outside of regular business hours (Monday-Friday, 8 AM - 8 PM EST).\n\nWould you like to proceed with the call? You may reach voicemail or emergency on-call support.');
+                
+                if (!confirmCall) {
+                    event.preventDefault();
+                    alert('Call cancelled. Consider using email support at billing@adminportal.com for non-urgent matters.');
+                    return;
+                }
+            }
+            
+            
             console.log(`Call tracked: ${type} support`);
             
-           
+            
         }
 
-        function openWhatsApp() {
-            const phoneNumber = '+15551234567'; 
-            const message = 'Hello, I need assistance with general support.';
-            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        function openClientPortal() {
+            alert('Opening client billing portal... In a real application, this would redirect to the secure billing portal.');
             
-            window.open(url, '_blank');
         }
 
         function showNotification(message, type) {
@@ -906,23 +979,50 @@
         });
 
         
-        function updateCallVolume() {
-            const hours = new Date().getHours();
-            const isPeakHours = hours >= 9 && hours <= 17;
-            const statNumbers = document.querySelectorAll('.stat-number');
+        document.querySelectorAll('.hours-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
             
-            if (isPeakHours && statNumbers[0]) {
-                statNumbers[0].textContent = '3 min';
-                statNumbers[0].style.color = '#f59e0b';
-            } else if (statNumbers[0]) {
-                statNumbers[0].textContent = '< 2 min';
-                statNumbers[0].style.color = '#2563eb';
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        
+        function updateBusinessHoursStatus() {
+            const now = new Date();
+            const hours = now.getHours();
+            const day = now.getDay();
+            
+            
+            const isBusinessHours = day >= 1 && day <= 5 && hours >= 8 && hours < 20;
+            const isSaturday = day === 6 && hours >= 9 && hours < 17;
+            
+            let statusText = '';
+            let statusColor = '';
+            
+            if (isBusinessHours) {
+                statusText = 'Open Now';
+                statusColor = '#10b981';
+            } else if (isSaturday) {
+                statusText = 'Limited Support';
+                statusColor = '#f59e0b';
+            } else {
+                statusText = 'Closed';
+                statusColor = '#ef4444';
+            }
+            
+            
+            const availabilityText = document.querySelector('.availability-text p');
+            if (availabilityText) {
+                availabilityText.innerHTML = `Our specialized billing team is available Monday through Friday, 8:00 AM to 8:00 PM EST. <strong>Current Status: <span style="color: ${statusColor}">${statusText}</span></strong>`;
             }
         }
 
         
-        updateCallVolume();
-        setInterval(updateCallVolume, 60000); 
+        updateBusinessHoursStatus();
+        setInterval(updateBusinessHoursStatus, 60000); 
     </script>
     @endsection
 </body>

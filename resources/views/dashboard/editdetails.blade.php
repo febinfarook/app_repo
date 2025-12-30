@@ -65,7 +65,7 @@
             font-weight: 500;
         }
 
-        /* Edit Card */
+       
         .edit-container {
             max-width: 1000px;
             margin: 0 auto;

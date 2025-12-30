@@ -46,6 +46,8 @@ Route::middleware([
     Route::get('/dashboard/email-support',[AppController::class,'emailSupport'])->name('dashboard.email-support');
     Route::get('/dashboard/compose-email',[AppController::class,'composeEmail'])->name('dashbooard.compose-email');
     Route::get('/dashboard/phone-support/general-support',[AppController::class,'generalSupport'])->name('dashboard.general-support');
+    Route::get('/dashboard/phone-support/emergency-line',[AppController::class,'emergencyLine'])->name('dashboard.emergency-line');
+    Route::get('/dashboard/phone-support/billing-support',[AppController::class,'billingSupport'])->name('dashboard.billing-support');
 });
 
 

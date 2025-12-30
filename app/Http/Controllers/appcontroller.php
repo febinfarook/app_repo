@@ -331,4 +331,12 @@ public function generalSupport()
 {
     return view('dashboard.general-support');
 }
+public function emergencyLine()
+{
+    return view('dashboard.emergency-line');
+}
+public function billingSupport()
+{
+    return view('dashboard.billing-support');
+}
 }

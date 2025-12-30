@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Support | Direct Expert Assistance</title>
+    <title>Phone Support</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -552,7 +552,7 @@
                     </div>
                     <div class="availability-text">
                         <h4>📞 24/7 Phone Support Available</h4>
-                        <p>Our technical experts are available around the clock. Average wait time <strong>under 2 minutes</strong> for urgent issues.</p>
+                        <p>Our technical experts are available arounqd the clock. Average wait time <strong>under 2 minutes</strong> for urgent issues.</p>
                     </div>
                 </div>
 
@@ -564,7 +564,7 @@
                         <h3 class="number-title">General Support</h3>
                         <div class="phone-number">+1 (800) 787-7678</div>
                         <p class="number-desc">For technical issues, account questions, and general assistance. Available 24/7 with tiered support levels.</p>
-                        <a href="tel:+1-800-787-7678" class="call-btn-small" onclick="trackCall('general')">
+                        <a href="{{ route('dashboard.general-support') }}" class="call-btn-small" onclick="trackCall('general')">
                             <i class="fas fa-phone"></i> Call General Support
                         </a>
                     </div>
@@ -576,7 +576,7 @@
                         <h3 class="number-title">Emergency Line</h3>
                         <div class="phone-number">+1 (800) 363-7443</div>
                         <p class="number-desc">Critical system failures, security breaches, or complete service outages only. Immediate response guaranteed.</p>
-                        <a href="tel:+1-800-363-7443" class="call-btn-small" onclick="confirmEmergencyCall()">
+                        <a href="{{ route('dashboard.emergency-line') }}" class="call-btn-small" onclick="confirmEmergencyCall()">
                             <i class="fas fa-phone"></i> Call Emergency Line
                         </a>
                     </div>
@@ -588,7 +588,7 @@
                         <h3 class="number-title">Billing Support</h3>
                         <div class="phone-number">+1 (800) 245-3663</div>
                         <p class="number-desc">Billing inquiries, payment issues, and account upgrades. Available Monday-Friday, 8 AM to 8 PM EST.</p>
-                        <a href="tel:+1-800-245-3663" class="call-btn-small" onclick="trackCall('billing')">
+                        <a href="{{ route('dashboard.billing-support') }}" class="call-btn-small" onclick="trackCall('billing')">
                             <i class="fas fa-phone"></i> Call Billing Support
                         </a>
                     </div>

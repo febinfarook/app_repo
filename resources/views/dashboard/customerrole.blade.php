@@ -157,7 +157,7 @@
             border: 2px solid var(--primary-blue);
         }
 
-        /* Sidebar */
+        
         .sidebar-modern {
             width: 280px;
             background: var(--sidebar-bg);
@@ -606,7 +606,7 @@
             body {
                 background: #111827;
                 color: #f3f4f6;
-            }
+            }                                                           
 
             .stat-card,
             .activity-card,
@@ -664,7 +664,7 @@
         <div class="navbar-controls">
            <div class="nav-profile dropdown">
     <a class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" 
-       href="#" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+       href="" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
         
         <div class="avatar bg-primary text-white rounded-circle d-flex justify-content-center align-items-center"
              style="width:35px; height:35px; font-weight:bold;">
@@ -752,9 +752,9 @@
             <div class="stat-card">
                 <div class="stat-header">
                     <div class="stat-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-                        <i class="fas fa-chart-line"></i>
+                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <span class="stat-change negative">-3%</span>
+                    <span class="stat-change negative">-3%</span>  
                 </div>
                 <div class="stat-number">89%</div>
                 <div class="stat-label">System Uptime</div>
@@ -790,7 +790,7 @@
 
         
         <footer class="dashboard-footer">
-            <p>© 2025 Customer Dashboard v2.0 | Last login: Today, 09:42 AM</p>
+            <p>© 2025 Customer Dashboard v2.0 | Last login: {{ now()->format('M d, Y - h:i A') }}</p>
         </footer>
     </main>
     </div>

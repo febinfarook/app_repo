@@ -17,7 +17,7 @@
             --border-gray: #dee2e6;
             --text-dark: #212529;
             --text-light: #6c757d;
-        }
+        }                                                                              
         
         body {
             background-color: #f5f7fb;
@@ -176,10 +176,10 @@
         }
         
         .customer-email {
-            color: var(--primary-blue);
-            font-weight: 500;
+            color: var(--primary-blue);     
+            font-weight: 500;  
         }
-        
+               
         .address-cell {
             max-width: 150px;
             overflow: hidden;
@@ -386,6 +386,7 @@
             </div>
         </div>
     </div>
+
     
    
     <div class="clean-table-container">
@@ -402,7 +403,7 @@
             <table class="table clean-table">
                 <thead>
                     <tr>
-                        <th width="60">SI No</th>
+                        <th>SI No</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Location</th>

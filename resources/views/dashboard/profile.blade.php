@@ -647,11 +647,11 @@
                         </div>
                         <div class="info-value">Standard Customer</div>
                     </div>
-                    
-                    <div class="info-item">
+                     
+                    <div class="info-item">   
                         <div class="info-label">
                             <i class="fas fa-calendar-plus"></i> Member Since
-                        </div>
+                        </div> 
                         <div class="info-value">{{ $customer->created_at->format('F j, Y') }}</div>
                     </div>
                 </div>
@@ -756,7 +756,7 @@
    
 
     
-    <a href="#" class="btn-modern btn-danger-modern"
+       <a href="{{ route('dashboard.delete', $customer->id) }}"  class="btn-modern btn-danger-modern"
         onclick="return confirm('Are you sure you want to delete this customer?')">
         <i class="fas fa-trash-alt"></i> Delete Account
     </a>

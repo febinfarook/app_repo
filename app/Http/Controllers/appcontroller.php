@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Document;
+use App\Models\Supplier;
 use function PHPUnit\Framework\returnArgument;
 
 class AppController extends Controller
@@ -290,53 +291,83 @@ class AppController extends Controller
     $customers = User::paginate(5);
     return view('dashboard.customerdetails', compact('customers'));
 }
-public function terms()
+public function addsuppliers()
 {
-    return view('dashboard.terms');
+    return view('dashboard.addsuppliers');
 }
-public function quickProcessing()
+public function store(request $request)
 {
-    return view('dashboard.quick-processing');
+        $request->validate([
+            'name'    => 'required|string|max:255',
+            'email'   => 'nullable|email',
+            'phone'   => 'nullable|string|max:20',
+            'company' => 'nullable|string|max:255',
+             'house' =>  'nullable|string',
+             'street' => 'nullable|string',
+             'city' => 'nullable|string',
+             'province'=>'nullable|string',
+        ]);
+
+        Supplier::create([
+            'name'    => $request->name,
+            'email'   => $request->email,
+            'phone'   => $request->phone,
+            'company' => $request->company,
+            'house'   => $request->house,
+            'street'  => $request->street,
+            'city'    => $request->city,
+            'province'=> $request->province
+        ]);
+
+        return redirect()
+            ->back()
+            ->with('success', 'Supplier added successfully');
+    
+}
+public function supplierslist()
+{
+    $suppliers = Supplier::latest()->paginate(10);
+    return view('dashboard.supplierslist', compact('suppliers'));
+}
+public function editsuppliers($id)
+{
+    $supplier= Supplier::findOrFail($id);
+    return view('dashboard.editsuppliers',compact('supplier'));
+}
+public function updatesuppliers(request $request,$id)
+{
+    $supplier = Supplier::findOrFail($id);
+
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'nullable|email',
+        'phone' => 'nullable|string',
+        'company' => 'nullable|string',
+        'house' => 'nullable|string',
+        'street' => 'nullable|string',
+        'city' => 'nullable|string',
+        'province' => 'nullable|string',
+    ]);
+
+    $supplier->update($request->all());
+
+    return redirect()
+        ->route('dashboard.supplierslist')
+        ->with('success', 'Supplier updated successfully!');
+}
+public function deletesuppliers($id)
+{
+    $supplier = Supplier::findOrFail($id);
+    $supplier->delete();
+
+    return redirect()
+        ->route('dashboard.supplierslist') 
+        ->with('success', 'Supplier deleted successfully');
 }
 
-public function support()
+public function viewsuppliers($id)
 {
-    return view('dashboard.support');
-}
-public function perfomanceAnalytics()
-{
-    return view('dashboard.perfomance-analytics');
-}
-public function emergencySupport()
-{
-    return view('dashboard.emergency-support');
-}
-public function liveChat()
-{
-    return view('dashboard.live-chat');
-}
-public function phoneSupport()
-{
-    return view('dashboard.phone-support');
-}
-public function emailSupport()
-{
-    return view('dashboard.email-support');
-}
-public function composeEmail()
-{
-    return view('dashboard.compose-email');
-}
-public function generalSupport()
-{
-    return view('dashboard.general-support');
-}
-public function emergencyLine()
-{
-    return view('dashboard.emergency-line');
-}
-public function billingSupport()
-{
-    return view('dashboard.billing-support');
+    $supplier = Supplier::findOrFail($id);
+    return view('dashboard.viewsuppliers',compact('supplier'));
 }
 }

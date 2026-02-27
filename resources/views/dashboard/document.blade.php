@@ -545,7 +545,9 @@
             <div class="upload-area" id="uploadArea">
                 <i class="fas fa-cloud-upload-alt"></i>
                 <h5 class="mb-2">Drop files here or click to upload</h5>
-                <p class="text-muted mb-0">Supports: PDF, DOC, JPG, PNG up to 10MB</p>
+                <p class="text-muted mb-0">
+Supports: PDF, DOC, DOCX, XLS, XLSX, JPG, PNG up to 10MB
+</p>
                 <input type="file" id="fileInput" class="d-none" name="document">
             </div>
             
@@ -631,10 +633,13 @@
         </form>
         
         <div class="quick-actions">
-           <button class="btn btn-outline-primary btn-sm" id="btnPdfOnly">
+           <button class="btn btn-outline-danger btn-sm" id="btnPdfOnly">
                    <i class="fas fa-file-pdf me-1"></i> PDF Only
            </button>
 
+          <button class="btn btn-outline-success btn-sm" id="btnExcelOnly">
+             <i class="fas fa-file-excel me-1"></i> Excel Only
+          </button>
           <button class="btn btn-outline-primary btn-sm" id="btnImagesOnly">
                     <i class="fas fa-file-image me-1"></i> Images Only
           </button>
@@ -892,6 +897,13 @@ document.querySelector("#btnPdfOnly").addEventListener("click", () => {
     renderRows(rows);
 });
 
+document.querySelector("#btnExcelOnly").addEventListener("click", () => {
+    const rows = getRows().filter(row => {
+        const type = row.querySelector("td:nth-child(4)").innerText.trim().toLowerCase();
+        return type === "xls" || type === "xlsx";
+    });
+    renderRows(rows);
+});
 
 document.querySelector("#btnImagesOnly").addEventListener("click", () => {
     const imageTypes = ["jpg", "jpeg", "png", "gif"];

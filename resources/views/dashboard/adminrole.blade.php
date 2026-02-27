@@ -22,8 +22,8 @@
             --warning-orange: #f59e0b;
             --danger-red: #ef4444;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-            --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 40px rgba(0,0,0,0.1);
+           --shadow-md: 0 2px 8px rgba(0,0,0,0.05);
+           --shadow-lg: 0 4px 12px rgba(0,0,0,0.06);
         }
 
         * {
@@ -33,7 +33,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            background: #f8fafc;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             min-height: 100vh;
             color: var(--text-primary);
@@ -291,14 +291,13 @@
         }
 
         
-        .main-content {
-            margin-left: 280px;
-            margin-top: 70px;
-            padding: 30px;
-            min-height: calc(100vh - 70px);
-            transition: margin-left 0.3s ease;
-        }
-
+      .main-content {
+         margin-left: 280px;
+         margin-top: 70px;
+         padding: 20px 25px 25px 25px;
+         background: #f1f5f9;
+         min-height: calc(100vh - 70px);
+       }
        
         .welcome-banner {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -544,6 +543,8 @@
 
             .main-content {
                 margin-left: 0;
+                margin-right: 15px;
+                border-radius: 16px;
             }
 
             .menu-toggle {
@@ -582,14 +583,16 @@
         }
 
        
-        .dashboard-footer {
-            text-align: center;
-            padding: 20px;
-            color: var(--text-secondary);
-            font-size: 14px;
-            border-top: 1px solid var(--border-color);
-            margin-top: 40px;
-        }
+      .dashboard-footer {
+           text-align: center;
+    padding: 25px;
+    background: #e9eef5;
+    color: #6b7280;
+    font-size: 14px;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 40px;
+    border-radius: 12px;
+}
 
         
         @media (prefers-color-scheme: dark) {
@@ -706,6 +709,14 @@
                 <i class="fas fa-folder"></i>
                 <span>Documents</span>
             </a>
+            <a href="{{ route('dashboard.addsuppliers') }}" class="nav-link-modern {{ request()->routeIs('dashboard.addsuppliers') ? 'active': '' }}">
+                <i class="fas fa-folder"></i>
+                <span>Add Suppliers</span>
+            </a>
+            <a href="{{ route('dashboard.supplierslist') }}" class="nav-link-modern {{ request()->routeIs('dashboard.supplierslist') ? 'active': '' }}">
+                <i class="fas fa-folder"></i>
+                <span>Suppliers List</span>
+            </a>
     </aside>
 
     
@@ -781,6 +792,14 @@
             <a href="{{ route('dashboard.documents') }}" class="quick-action-btn">
                 <i class="fas fa-folder-plus"></i>
                 <div class="quick-action-label">Upload Document</div>
+            </a>
+            <a href="{{ route('dashboard.addsuppliers') }}" class="quick-action-btn">
+                <i class="fas fa-folder-plus"></i>
+                <div class="quick-action-label">Add Suppliers</div>
+            </a>
+            <a href="{{ route('dashboard.supplierslist') }}" class="quick-action-btn">
+                <i class="fas fa-folder-plus"></i>
+                <div class="quick-action-label">Suppliers List</div>
             </a>
         </div>
 

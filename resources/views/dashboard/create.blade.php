@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Customer</title>
+    <title>Add Customer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -723,7 +723,7 @@
                                 </label>
                                 <div class="input-wrapper">
                                     <input type="text" 
-                                           name="house" 
+                                           name="house"     
                                            class="form-control-modern @error('house') error-highlight @enderror" 
                                            placeholder="House no. or building name"
                                            value="{{ old('house') }}">
@@ -817,7 +817,7 @@
                         </button>
                         <p class="text-muted mt-3 mb-0" style="font-size: 14px;">
                                  By creating an account, you agree to our
-                        <a href="{{ route('dashboard.terms') }}" class="text-primary">
+                        <a href="#" class="text-primary">
                                  Terms of Service
                         </a>
                        </p>
@@ -827,17 +827,17 @@
 
            
            <div class="form-features">
-    <a href="{{ route('dashboard.terms') }}" class="feature-btn">
+    <a href="#" class="feature-btn">
         <i class="fas fa-shield-alt"></i>
         <span>Secure & Encrypted</span>
     </a>
 
-    <a href="{{ route('dashboard.quick-processing') }}" class="feature-btn">
+    <a href="#" class="feature-btn">
          <i class="fas fa-bolt"></i>
     <span>Quick Processing</span>
    </a>
 
-    <a href="{{ route('dashboard.support') }}" class="feature-btn">
+    <a href="#" class="feature-btn">
     <i class="fas fa-headset"></i>
     <span>24/7 Support</span>
 </a>

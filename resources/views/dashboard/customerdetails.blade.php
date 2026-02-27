@@ -650,7 +650,7 @@
                 <table class="table table-modern table-hover">
                     <thead>
                         <tr>
-                            <th width="60">SI No</th>
+                            <th>SI No</th>
                             <th>Customer</th>
                             <th>Email</th>
                             <th>Address</th>

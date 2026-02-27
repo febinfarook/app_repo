@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Route::middleware([
@@ -36,19 +36,15 @@ Route::middleware([
     Route::get('/dashboard/deletedetails/{id}',[AppController::class,'deletedetails'])->name('dashboard.deletedetails');
     Route::get('/dashboard/customers',[AppController::class,'customers'])->name('dashboard.index');
     Route::get('/dashboard/customerdetails',[AppController::class,'customer'])->name('dashboard.customerdetails');
-    Route::get('/dashboard/terms-of-service',[AppController::class,'terms'])->name('dashboard.terms');
-    Route::get('/dashboard/quick-processing',[AppController::class,'quickProcessing'])->name('dashboard.quick-processing');
-    Route::get('/dashboard/support',[AppController::class,'support'])->name('dashboard.support');
-    Route::get('/dashboard/perfomance-analytics',[AppController::class,'perfomanceAnalytics'])->name('dashboard.perfomance-analytics');
-    Route::get('/dashboard/emergency-support',[AppController::class,'emergencySupport'])->name('dashboard.emergency-support');
-    Route::get('/dashboard/live-chat',[AppController::class,'liveChat'])->name('dashboard.live-chat');
-    Route::get('/dashboard/phone-support',[AppController::class,'phoneSupport'])->name('dashboard.phone-support');
-    Route::get('/dashboard/email-support',[AppController::class,'emailSupport'])->name('dashboard.email-support');
-    Route::get('/dashboard/compose-email',[AppController::class,'composeEmail'])->name('dashbooard.compose-email');
-    Route::get('/dashboard/phone-support/general-support',[AppController::class,'generalSupport'])->name('dashboard.general-support');
-    Route::get('/dashboard/phone-support/emergency-line',[AppController::class,'emergencyLine'])->name('dashboard.emergency-line');
-    Route::get('/dashboard/phone-support/billing-support',[AppController::class,'billingSupport'])->name('dashboard.billing-support');
-});
+    Route::get('/dashboard/addsuppliers',[AppController::class,'addsuppliers'])->name('dashboard.addsuppliers');
+    Route::post('/supplier/store',[AppController::class,'store'])->name('supplier.store');
+    Route::get('/dashboard/supplierslist',[AppController::class,'supplierslist'])->name('dashboard.supplierslist');
+    Route::get('/dashboard/editsuppliers/{id}',[AppController::class,'editsuppliers'])->name('dashboard.editsuppliers');
+    Route::put('/dashboard/updatesuppliers/{id}',[AppController::class,'updatesuppliers'])->name('supplier.updatesuppliers');
+    Route::get('/dashboard/deletesuppliers/{id}',[AppController::class,'deletesuppliers'])->name('dashboard.deletesuppliers');
+    Route::get('/dashboard/viewsuppliers/{id}',[AppController::class,'viewsuppliers'])->name('dashboard.viewsuppliers');
+
+   });
 
 
 
